@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :comments
   devise_for :users
   resources :links do
@@ -8,8 +9,6 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-
-
 
   root to: "links#index"
   # The priority is based upon order of creation: first created -> highest priority.

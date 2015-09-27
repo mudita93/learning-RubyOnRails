@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+
 	 <header class="navbar navbar-default" role="navigation">
     <div class="navbar-inner">
       <div class="container">
@@ -43,40 +43,3 @@
   </div>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-    <head>
-      <title>Omrails</title>
-     <%= stylesheet_link_tag    "application", :media => "all" %>
-     <%= javascript_include_tag "application" %>
-     <%= csrf_meta_tags %>
-    </head>
-    <body>
-	    
-	<div class="container">
-			<% flash.each do |name, msg| %>
-				<%= content_tag(:div, msg, class:"alert alert-#(name)") %>
-			<% end %>
-	       
-	        
-	</div>
-
-	<% if user_signed_in? %>
-		<ul>
-			<li><%= link_to 'Submit link', new_link_path %></li>
-			<li><%= link_to 'Account', edit_user_registration_path %></li>
-			<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-		</ul>
-	<% else %>
-		<ul>
-			<li><%= link_to 'Sign up', new_user_registration_path %></li>
-			<li><%= link_to 'Sign in', new_user_session_path %></li>
-		</ul>
-
-	<% end %>
-<%= yield %>  
-    </body>
-</html>
-
->>>>>>> 'add_bootstrap'
