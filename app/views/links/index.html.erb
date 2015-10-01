@@ -1,9 +1,12 @@
-<% @links.each do |link| %>
+<% @links_topic.each do |topic, links| %>  
+<div class="link row clearfix">
+  <h2><%= topic %></h2>  
+  <% links.each do |link| %>
   <div class="link row clearfix">
-    <h2>
+    <h3>
       <%= link_to link.title, link %><br>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> ago by <%= link.user.name %></small>
-    </h2>
+    </h3>
 
     <div class="btn-group">
       <a class="btn btn-default btn-sm" href="<%= link.url %>">Visit Link</a>
@@ -18,7 +21,8 @@
         <%= link.get_downvotes.size %>
       <% end %>
     </div>
-  </div>
-<% end %>
+  </div> 
+  <% end %>  
+<% end %> 
 
 
