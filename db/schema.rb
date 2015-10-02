@@ -30,20 +30,10 @@ ActiveRecord::Schema.define(version: 20151001195301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.string   "heading"
-    t.integer  "topic_id"
     t.string   "topic"
   end
 
-  add_index "links", ["heading"], name: "index_links_on_heading"
-  add_index "links", ["topic_id"], name: "index_links_on_topic_id"
   add_index "links", ["user_id"], name: "index_links_on_user_id"
-
-  create_table "topics", force: :cascade do |t|
-    t.string   "heading"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

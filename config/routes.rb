@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :topics do
-    resources :links
-  end
+  resources :links
+
   resources :comments
   devise_for :users
   resources :links do
